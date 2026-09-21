@@ -62,7 +62,49 @@
             <span class="item-action">abrir &rarr;</span>
           </div>
         </a>
+
+        <!-- Index Item 3 -->
+        <a href="#" class="index-item hidden" data-target="Un ramo atrasado/index.html" data-id="flores">
+          <div class="item-header">
+            <span class="item-number">03</span>
+            <span class="item-separator"></span>
+            <h2 class="item-title">Un ramo atrasado</h2>
+          </div>
+          <div class="item-details">
+            <p class="item-desc">Flores amarillas, una graduación y probablemente algo de sushi.</p>
+            <span class="item-action">abrir &rarr;</span>
+          </div>
+        </a>
       </main>
+
+      <!-- Discovery Transition Hint -->
+      <div class="scroll-hint reveal">
+        <span class="scroll-ornament">✦</span>
+        <p class="scroll-text">todavía falta algo...</p>
+        <div class="scroll-line"></div>
+      </div>
+
+      <!-- Discovery Sections (Subtle & Editorial) -->
+      <div class="discovery-container">
+        <section class="discovery-section" id="chapters-section">
+          <h3 class="discovery-header">Páginas por escribir</h3>
+          <div id="chaptersList" class="discovery-list"></div>
+        </section>
+
+        <div class="discovery-pause">✦</div>
+
+        <section class="discovery-section" id="dates-section">
+          <h3 class="discovery-header">Algunas fechas</h3>
+          <div id="datesTimeline" class="discovery-dates"></div>
+        </section>
+
+        <div class="discovery-pause">✦</div>
+
+        <section class="discovery-section" id="updates-section">
+          <h3 class="discovery-header">Pequeñas cosas que han cambiado</h3>
+          <div id="updatesList" class="discovery-updates"></div>
+        </section>
+      </div>
 
       <!-- Progress & Final Unlock -->
       <div class="progress-section">
@@ -99,6 +141,9 @@
     </footer>
   </div>
 
+  <script src="data/chapters.js"></script>
+  <script src="data/importantDates.js"></script>
+  <script src="data/updates.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

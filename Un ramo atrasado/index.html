@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un ramo atrasado</title>
+  <meta name="description" content="Flores amarillas, una graduación y un ramo de sushi.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍣</text></svg>">
+</head>
+<body>
+
+  <!-- ══════════ Back Button ══════════ -->
+  <a href="../index.html" class="back-btn" aria-label="Volver al inicio" title="Volver al inicio">
+    <span class="arrow-left">←</span> Volver
+  </a>
+
+  <!-- ══════════ Golden Particles ══════════ -->
+  <div class="particles-container" id="particles" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════
+       INTRO SCREEN
+       ══════════════════════════════════════════ -->
+  <div id="intro-screen">
+    <div class="intro-text" id="introText1">
+      <h1>Llegué un poquito tarde.</h1>
+    </div>
+    <div class="intro-text" id="introText2">
+      <p>Pero llegué.</p>
+    </div>
+    <div class="intro-btn" id="introBtn">
+      <button id="discoverBtn" type="button">Abrir</button>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       THE BOOK
+       ══════════════════════════════════════════ -->
+  <div class="book-wrapper" id="bookWrapper">
+    <div id="magic-flowers" class="flowers-layer">
+<div class="flowers">
+          <div class="flower flower--1">
+            <div class="flower__leafs flower__leafs--1">
+              <div class="flower__leaf flower__leaf--1"></div>
+              <div class="flower__leaf flower__leaf--2"></div>
+              <div class="flower__leaf flower__leaf--3"></div>
+              <div class="flower__leaf flower__leaf--4"></div>
+              <div class="flower__white-circle"></div>
+
+              <div class="flower__light flower__light--1"></div>
+              <div class="flower__light flower__light--2"></div>
+              <div class="flower__light flower__light--3"></div>
+              <div class="flower__light flower__light--4"></div>
+              <div class="flower__light flower__light--5"></div>
+              <div class="flower__light flower__light--6"></div>
+              <div class="flower__light flower__light--7"></div>
+              <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+              <div class="flower__line__leaf flower__line__leaf--1"></div>
+              <div class="flower__line__leaf flower__line__leaf--2"></div>
+              <div class="flower__line__leaf flower__line__leaf--3"></div>
+              <div class="flower__line__leaf flower__line__leaf--4"></div>
+              <div class="flower__line__leaf flower__line__leaf--5"></div>
+              <div class="flower__line__leaf flower__line__leaf--6"></div>
+            </div>
+          </div>
+
+          <div class="flower flower--2">
+            <div class="flower__leafs flower__leafs--2">
+              <div class="flower__leaf flower__leaf--1"></div>
+              <div class="flower__leaf flower__leaf--2"></div>
+              <div class="flower__leaf flower__leaf--3"></div>
+              <div class="flower__leaf flower__leaf--4"></div>
+              <div class="flower__white-circle"></div>
+
+              <div class="flower__light flower__light--1"></div>
+              <div class="flower__light flower__light--2"></div>
+              <div class="flower__light flower__light--3"></div>
+              <div class="flower__light flower__light--4"></div>
+              <div class="flower__light flower__light--5"></div>
+              <div class="flower__light flower__light--6"></div>
+              <div class="flower__light flower__light--7"></div>
+              <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+              <div class="flower__line__leaf flower__line__leaf--1"></div>
+              <div class="flower__line__leaf flower__line__leaf--2"></div>
+              <div class="flower__line__leaf flower__line__leaf--3"></div>
+              <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+          </div>
+
+          <div class="flower flower--3">
+            <div class="flower__leafs flower__leafs--3">
+              <div class="flower__leaf flower__leaf--1"></div>
+              <div class="flower__leaf flower__leaf--2"></div>
+              <div class="flower__leaf flower__leaf--3"></div>
+              <div class="flower__leaf flower__leaf--4"></div>
+              <div class="flower__white-circle"></div>
+
+              <div class="flower__light flower__light--1"></div>
+              <div class="flower__light flower__light--2"></div>
+              <div class="flower__light flower__light--3"></div>
+              <div class="flower__light flower__light--4"></div>
+              <div class="flower__light flower__light--5"></div>
+              <div class="flower__light flower__light--6"></div>
+              <div class="flower__light flower__light--7"></div>
+              <div class="flower__light flower__light--8"></div>
+            </div>
+            <div class="flower__line">
+              <div class="flower__line__leaf flower__line__leaf--1"></div>
+              <div class="flower__line__leaf flower__line__leaf--2"></div>
+              <div class="flower__line__leaf flower__line__leaf--3"></div>
+              <div class="flower__line__leaf flower__line__leaf--4"></div>
+            </div>
+          </div>
+
+          <div class="grow-ans" style="--d: 1.2s">
+            <div class="flower__g-long">
+              <div class="flower__g-long__top"></div>
+              <div class="flower__g-long__bottom"></div>
+            </div>
+          </div>
+
+          <div class="growing-grass">
+            <div class="flower__grass flower__grass--1">
+              <div class="flower__grass--top"></div>
+              <div class="flower__grass--bottom"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+              <div class="flower__grass__overlay"></div>
+            </div>
+          </div>
+
+          <div class="growing-grass">
+            <div class="flower__grass flower__grass--2">
+              <div class="flower__grass--top"></div>
+              <div class="flower__grass--bottom"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--1"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--2"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--3"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--4"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--5"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--6"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--7"></div>
+              <div class="flower__grass__leaf flower__grass__leaf--8"></div>
+              <div class="flower__grass__overlay"></div>
+            </div>
+          </div>
+
+          <div class="grow-ans" style="--d: 2.4s">
+            <div class="flower__g-right flower__g-right--1">
+              <div class="leaf"></div>
+            </div>
+          </div>
+
+          <div class="grow-ans" style="--d: 2.8s">
+            <div class="flower__g-right flower__g-right--2">
+              <div class="leaf"></div>
+            </div>
+          </div>
+
+          <div class="grow-ans" style="--d: 2.8s">
+            <div class="flower__g-front">
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div
+                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8"
+              >
+                <div class="flower__g-front__leaf"></div>
+              </div>
+              <div class="flower__g-front__line"></div>
+            </div>
+          </div>
+
+          <div class="grow-ans" style="--d: 3.2s">
+            <div class="flower__g-fr">
+              <div class="leaf"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
+              <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--0">
+            <div class="grow-ans" style="--d: 3s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 2.2s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.4s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.6s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--1">
+            <div class="grow-ans" style="--d: 3.6s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.8s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.2s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--2">
+            <div class="grow-ans" style="--d: 4s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.2s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.4s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.6s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--3">
+            <div class="grow-ans" style="--d: 4s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.2s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.6s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--4">
+            <div class="grow-ans" style="--d: 4s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.2s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style--d: 3s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.6s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--5">
+            <div class="grow-ans" style="--d: 4s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.2s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.6s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--6">
+            <div class="grow-ans" style="--d: 4.2s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.4s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.6s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 4.8s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+
+          <div class="long-g long-g--7">
+            <div class="grow-ans" style="--d: 3s">
+              <div class="leaf leaf--0"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.2s">
+              <div class="leaf leaf--1"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.5s">
+              <div class="leaf leaf--2"></div>
+            </div>
+            <div class="grow-ans" style="--d: 3.6s">
+              <div class="leaf leaf--3"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Page Counter -->
+    <div class="page-counter" id="pageCounter">Página 1 de 12</div>
+
+    <!-- The Book -->
+    <div class="book" id="book">
+
+      <!-- ═══ PAGE 1: COVER ═══ -->
+      <div class="book-page" data-page="0">
+        <div class="page-front cover-front">
+          <div class="page-content">
+            <span class="cover-ornament-top">✦ ✦ ✦</span>
+            <div class="cover-divider" style="margin-top: 2rem;"></div>
+            <h1 class="cover-title" style="font-size: 2rem;">Llegaste.</h1>
+            <div class="cover-divider"></div>
+            <p class="cover-subtitle">Un pequeño detalle<br>atrasado</p>
+            <span class="cover-ornament-bottom">✦ ✦ ✦</span>
+          </div>
+          <div class="open-book-btn">
+            <span class="pulse-ring"></span>
+            Clic aquí para abrir <span class="arrow">→</span>
+          </div>
+        </div>
+        <div class="page-back cover-back">
+          <div class="page-content">
+            <p class="text-small text-italic" style="opacity: 0.4;">Un día tarde, como siempre.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 2: HUMOR Y SUSHI ═══ -->
+      <div class="book-page" data-page="1">
+        <div class="page-front">
+          <div class="page-content">
+            <p class="text-body text-muted fade-up-text">Sé que dijiste que las flores amarillas estaban bien...</p>
+            <div class="divider"></div>
+            <p class="text-large text-gold mt-2 fade-up-text" style="animation-delay: 1.5s;">...pero que un ramo de sushi sería mejor.</p>
+          </div>
+          <span class="page-number">1</span>
+        </div>
+        <div class="page-back">
+          <div class="page-content">
+            <div class="sushi-bouquet-container fade-up-text">
+               <!-- Se inyectará el SVG de sushi mediante JS para no saturar, o podemos dejar una img si es más limpio. 
+                    El SVG original de la pág 6 lo pasaremos aquí. -->
+               <img src="../Dia del lector/img/seal_peeking.jpg" alt="Foca con sushi" class="page-image tiny" style="margin: 0 auto; display:block;">
+               <div style="font-size: 2rem; text-align: center; margin-top: 10px;">(La foca aprueba)</div>
+            </div>
+            <div class="divider"></div>
+            <p class="text-medium text-center fade-up-text" style="animation-delay: 1s;">Y considerando tus estándares, tenía sentido.</p>
+          </div>
+          <span class="page-number">2</span>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 3: LA PRIMERA FLOR ═══ -->
+      <div class="book-page" data-page="2">
+        <div class="page-front">
+          <div class="page-content">
+            <p class="text-medium text-italic fade-up-text">Pero hablando en serio...</p>
+            <div class="divider"></div>
+            <p class="text-body fade-up-text" style="animation-delay: 2s;">Hay fechas y cosas que merecen ser celebradas.</p>
+            <p class="text-body text-gold mt-2 fade-up-text" style="animation-delay: 4s;">(Estar muy orgulloso de ti, por ejemplo).</p>
+          </div>
+          <span class="page-number">3</span>
+        </div>
+        <div class="page-back">
+          <div class="page-content">
+            <p class="text-medium text-center fade-up-text" style="animation-delay: 4s;">Sí. Eran estas.</p>
+            <div class="page-image tiny mt-3 fade-up-text" style="animation-delay: 5s;">
+              <img src="../Dia del lector/img/foca_3.jpg" alt="Foca orgullosa" loading="lazy">
+            </div>
+            <p class="text-small text-center mt-2 fade-up-text text-italic" style="animation-delay: 5.5s;">Traducción de la foca: está muy orgulloso.</p>
+            <p class="floating-note-page right fade-up-text" style="animation-delay: 6s; bottom: 30px;">Empezando por una.</p>
+          </div>
+          <span class="page-number">4</span>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 4: LA DISTANCIA ═══ -->
+      <div class="book-page" data-page="3">
+        <div class="page-front">
+          <div class="page-content">
+            <p class="text-body text-italic fade-up-text">Supongo que la vida tiene esa costumbre de poner distancia donde antes había conversaciones.</p>
+            <div class="divider"></div>
+            <p class="text-body mt-2 fade-up-text" style="animation-delay: 2s;">Y sí... quizá ya no hablamos tanto.</p>
+            <p class="text-medium mt-1 fade-up-text" style="animation-delay: 3.5s;">No pasa nada.</p>
+          </div>
+          <span class="page-number">5</span>
+        </div>
+        <div class="page-back">
+          <div class="page-content">
+            <p class="text-medium text-gold text-center fade-up-text">Hay personas que uno simplemente no deja de recordar.</p>
+            <div class="page-image tiny mt-4 fade-up-text" style="animation-delay: 2s; opacity: 0.5;">
+              <img src="../Dia del lector/img/foca_2.jpg" alt="Foca" loading="lazy">
+            </div>
+            <p class="floating-note-page right fade-up-text" style="animation-delay: 4s;">Pasa más seguido de lo que parece.</p>
+          </div>
+          <span class="page-number">6</span>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 5: LA SONRISA Y AMOR/AMISTAD ═══ -->
+      <div class="book-page" data-page="4">
+        <div class="page-front">
+          <div class="page-content">
+            <p class="text-body text-muted fade-up-text">Además...</p>
+            <p class="text-medium text-italic mt-2 fade-up-text" style="animation-delay: 1.5s;">Hay sonrisas que tienen la descortesía de no dejarse olvidar.</p>
+            <div class="divider"></div>
+            <p class="text-large text-gold mt-2 fade-up-text" style="animation-delay: 3s;">La tuya lleva bastante tiempo abusando de eso.</p>
+          </div>
+          <span class="page-number">7</span>
+        </div>
+        <div class="page-back">
+          <div class="page-content">
+            <p class="text-body text-center mt-4 fade-up-text">Feliz Amor y Amistad.</p>
+            <p class="text-small text-center mt-2 fade-up-text" style="animation-delay: 1.5s; opacity: 0.7;">Que eso pueda significar lo que tú quieras.</p>
+          </div>
+          <span class="page-number">8</span>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 6: REVELACION DEL RAMO ═══ -->
+      <div class="book-page" data-page="5">
+        <div class="page-front" style="background: transparent; box-shadow: none;">
+          <div class="page-content">
+            <!-- Espacio vacío intencional para ver el ramo completo crecer -->
+          </div>
+        </div>
+        <div class="page-back" style="background: transparent; box-shadow: none;">
+          <div class="page-content">
+            <p class="text-medium text-center text-gold fade-up-text" style="animation-delay: 4s; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Llegué tarde. Pero al menos traje algo.</p>
+            <div class="signature mt-4 fade-up-text" style="animation-delay: 6s; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">— Nicolás</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ═══ PAGE 8: BACK COVER ═══ -->
+      <div class="book-page" data-page="7">
+        <div class="page-front">
+          <div class="page-content">
+            <p class="floating-note-page right">Ya puedes irte.</p>
+            
+            <div class="page-image small mt-3">
+              <img src="../Dia del lector/img/foca_4.jpg" alt="Foca abrazando el final" loading="lazy">
+            </div>
+            <p class="text-medium text-center text-gold mt-2">Un abrazo enorme.</p>
+            
+            <div class="reactions-container mt-4" id="reactionsContainer">
+              <h3 class="reactions-title text-medium text-center">¿El sushi compensó el retraso?</h3>
+              <div class="reactions-grid mt-2">
+                <button class="reaction-btn" data-reaction="like">Sí, perdonado</button>
+                <button class="reaction-btn" data-reaction="love">Prefería flores, pero OK</button>
+                <button class="reaction-btn" data-reaction="seal">La foca salvó el día</button>
+              </div>
+              <p class="reaction-response text-italic mt-3 text-center" id="reactionResponse"></p>
+            </div>
+          </div>
+          <span class="page-number">13</span>
+        </div>
+        <div class="page-back cover-back">
+          <div class="page-content">
+            <span style="font-size: 2rem; opacity: 0.3;">🍣</span>
+            <p class="text-small text-italic mt-2" style="opacity: 0.4;">Fin (con mucha soya).</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /book -->
+
+    <!-- Navigation -->
+    <div class="book-nav" id="bookNav">
+      <button class="nav-btn" id="prevBtn" disabled aria-label="Página anterior">
+        <span class="arrow arrow-left">←</span> Anterior
+      </button>
+      <button class="nav-btn" id="nextBtn" aria-label="Página siguiente">
+        Siguiente <span class="arrow arrow-right">→</span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Tap Zones -->
+    <div class="tap-zone tap-zone-left" id="tapZoneLeft" aria-label="Página anterior">
+      <div class="tap-icon">←</div>
+    </div>
+    <div class="tap-zone tap-zone-right" id="tapZoneRight" aria-label="Página siguiente">
+      <div class="tap-icon">→</div>
+    </div>
+
+    <!-- Progress Dots -->
+    <div class="progress-dots" id="progressDots"></div>
+
+    <!-- Keyboard Hint (desktop only) -->
+    <div class="keyboard-hint" id="keyboardHint">← → usa las flechas del teclado</div>
+
+  </div><!-- /book-wrapper -->
+
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+       ══════════════════════════════════════════ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Marcar como visitado en localStorage
+      localStorage.setItem('sof_visited_flores', 'true');
+      
+      // Init Intro
+      const text1 = document.getElementById('introText1');
+      const text2 = document.getElementById('introText2');
+      const btn = document.getElementById('introBtn');
+
+      setTimeout(() => text1.classList.add('visible'), 500);
+      setTimeout(() => text2.classList.add('visible'), 2200);
+      setTimeout(() => btn.classList.add('visible'), 3500);
+
+      document.getElementById('discoverBtn').addEventListener('click', () => {
+        document.getElementById('intro-screen').classList.add('hidden');
+        document.getElementById('bookWrapper').classList.add('active');
+
+        setTimeout(() => {
+          document.getElementById('pageCounter').classList.add('visible');
+          document.getElementById('bookNav').classList.add('visible');
+          
+          if (window.innerWidth >= 768) {
+            const hint = document.getElementById('keyboardHint');
+            hint.classList.add('visible');
+            setTimeout(() => hint.classList.remove('visible'), 5000);
+          }
+        }, 800);
+      });
+
+      // Init Particles
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        const container = document.getElementById('particles');
+        const isMobile = window.innerWidth < 768;
+        const count = isMobile ? 15 : 30;
+
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement('div');
+          p.className = 'particle';
+          const size = Math.random() * 4 + 2;
+          const left = Math.random() * 100;
+          const dur = Math.random() * 15 + 15;
+          const delay = Math.random() * 10;
+          const opacity = Math.random() * 0.4 + 0.1;
+          const drift = (Math.random() - 0.5) * 80;
+          
+          p.style.width = `${size}px`;
+          p.style.height = `${size}px`;
+          p.style.left = `${left}vw`;
+          p.style.setProperty('--o', opacity);
+          p.style.setProperty('--drift', drift);
+          p.style.animation = `floatUp ${dur}s ${delay}s linear infinite`;
+          container.appendChild(p);
+        }
+      }
+
+      // Book Logic
+      let currentPage = 0;
+      let totalPages = 0;
+      let isAnimating = false;
+      let pages = [];
+
+      // Expand single book-pages into pairs for realistic turn
+      const oldPages = document.querySelectorAll('.book-page');
+      oldPages.forEach((page) => {
+        const back = page.querySelector('.page-back');
+        if (back) {
+          const newPage = document.createElement('div');
+          newPage.className = 'book-page';
+          
+          const newFront = document.createElement('div');
+          newFront.className = 'page-front';
+          newFront.innerHTML = back.innerHTML; 
+          
+          const emptyBack1 = document.createElement('div');
+          emptyBack1.className = 'page-back';
+          
+          newPage.appendChild(newFront);
+          newPage.appendChild(emptyBack1);
+          
+          page.parentNode.insertBefore(newPage, page.nextSibling);
+          back.remove();
+          
+          const emptyBack2 = document.createElement('div');
+          emptyBack2.className = 'page-back';
+          page.appendChild(emptyBack2);
+        }
+      });
+
+      pages = document.querySelectorAll('.book-page');
+      pages.forEach((p, i) => p.dataset.page = i);
+      totalPages = pages.length;
+
+      const dotsContainer = document.getElementById('progressDots');
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'progress-dot' + (i === 0 ? ' active' : '');
+        dot.dataset.page = i;
+        dotsContainer.appendChild(dot);
+      }
+
+      updatePageStack();
+      updateUI();
+
+      function updatePageStack() {
+        pages.forEach((page, i) => {
+          if (i < currentPage) {
+            page.style.zIndex = i;
+          } else {
+            page.style.zIndex = totalPages - i;
+          }
+        });
+      }
+
+      function updateUI() {
+        const displayPage = Math.min(currentPage + 1, totalPages);
+        document.getElementById('pageCounter').textContent = `Página ${displayPage} de ${totalPages}`;
+
+        document.getElementById('prevBtn').disabled = currentPage <= 0;
+        document.getElementById('nextBtn').disabled = currentPage >= totalPages;
+
+        const tapLeft = document.getElementById('tapZoneLeft');
+        const tapRight = document.getElementById('tapZoneRight');
+        if (tapLeft) tapLeft.style.display = currentPage <= 0 ? 'none' : 'flex';
+        if (tapRight) tapRight.style.display = currentPage >= totalPages - 1 ? 'none' : 'flex';
+
+        document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+          dot.classList.remove('active', 'past');
+          if (i === currentPage) dot.classList.add('active');
+          else if (i < currentPage) dot.classList.add('past');
+        });
+      }
+
+      function updateNarrativeSteps() {
+        const body = document.body;
+        // La progresión de la historia se basa en la currentPage (0 es cover)
+        // Cada paso es una doble página: 
+        // currentPage 0 = Cover
+        // currentPage 1 = Sushi (Páginas 1-2)
+        // currentPage 2 = Primera Flor (Páginas 3-4)
+        // currentPage 3 = Segunda Flor (Páginas 5-6)
+        // currentPage 4 = Tercera Flor (Páginas 7-8)
+        // currentPage 5 = Cuarta/Quinta Flor (Páginas 9-10)
+        // currentPage 6 = Ramo completo (Páginas 11-12)
+        
+        body.classList.remove('step-1', 'step-2', 'step-3', 'step-4', 'step-final');
+        
+        if (currentPage >= 2) body.classList.add('step-1'); // Crece primera flor
+        if (currentPage >= 3) body.classList.add('step-2'); // Crece segunda flor
+        if (currentPage >= 4) body.classList.add('step-3'); // Crece tercera flor y pasto
+        if (currentPage >= 5) body.classList.add('step-4'); // Más pastos/hojas
+        if (currentPage >= 6) body.classList.add('step-final'); // Halo final
+      }
+
+      function nextPage() {
+        if (isAnimating || currentPage >= totalPages) return;
+        isAnimating = true;
+        pages[currentPage].classList.add('flipped');
+        currentPage++;
+        updatePageStack();
+        updateUI();
+        updateNarrativeSteps();
+        
+        // Trigger fade-up animations on the new visible pages
+        const visiblePages = document.querySelectorAll('.book-page:not(.flipped) .page-front, .book-page.flipped:last-of-type .page-back');
+        visiblePages.forEach(p => {
+            const texts = p.querySelectorAll('.fade-up-text');
+            texts.forEach(t => {
+                t.style.animation = 'none';
+                t.offsetHeight; /* trigger reflow */
+                t.style.animation = null;
+            });
+        });
+
+        setTimeout(() => isAnimating = false, 600);
+      }
+      
+      function prevPage() {
+        if (isAnimating || currentPage <= 0) return;
+        isAnimating = true;
+        currentPage--;
+        pages[currentPage].classList.remove('flipped');
+        updatePageStack();
+        updateUI();
+        updateNarrativeSteps();
+        setTimeout(() => isAnimating = false, 600);
+      }
+
+      function prevPage() {
+        if (isAnimating || currentPage <= 0) return;
+        isAnimating = true;
+        currentPage--;
+        pages[currentPage].classList.remove('flipped');
+        updatePageStack();
+        updateUI();
+        setTimeout(() => isAnimating = false, 600);
+      }
+
+      document.getElementById('prevBtn').addEventListener('click', prevPage);
+      document.getElementById('nextBtn').addEventListener('click', nextPage);
+      document.getElementById('tapZoneLeft').addEventListener('click', prevPage);
+      document.getElementById('tapZoneRight').addEventListener('click', nextPage);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextPage(); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+      });
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const book = document.getElementById('book');
+
+      book.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, { passive: true });
+      book.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) nextPage();
+          else prevPage();
+        }
+      }, { passive: true });
+
+      pages.forEach(page => {
+        page.addEventListener('click', (e) => {
+          if (e.target.closest('.nav-btn, button, [role="button"], .reaction-btn')) return;
+          if (!page.classList.contains('flipped')) nextPage();
+        });
+      });
+
+      // Reactions logic
+      const reactionBtns = document.querySelectorAll('.reaction-btn');
+      const reactionResponse = document.getElementById('reactionResponse');
+
+      const responses = {
+        'like': 'Me alegra que te haya gustado. Disfruta tu sushi imaginario.',
+        'love': '¿Verdad que es mejor que un ramo normal? Sabía que lo entenderías.',
+        'seal': 'La foca se siente muy honrada por tu validación.'
+      };
+
+      reactionBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const reaction = btn.dataset.reaction;
+          
+          reactionBtns.forEach(b => {
+            b.style.opacity = '0.5';
+            b.style.transform = 'scale(0.95)';
+          });
+          
+          btn.style.opacity = '1';
+          btn.style.transform = 'scale(1.05)';
+          btn.style.borderColor = 'var(--text-gold)';
+          btn.style.background = 'rgba(212, 175, 55, 0.1)';
+          
+          reactionResponse.style.opacity = '0';
+          setTimeout(() => {
+            reactionResponse.textContent = responses[reaction];
+            reactionResponse.style.opacity = '1';
+          }, 300);
+        });
+      });
+
+    });
+  </script>
+
+</body>
+</html>
