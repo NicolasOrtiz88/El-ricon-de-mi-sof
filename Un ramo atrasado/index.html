@@ -15,8 +15,8 @@
     <span class="arrow-left">←</span> Volver
   </a>
 
-  <!-- ══════════ Golden Particles ══════════ -->
-  <div class="particles-container" id="particles" aria-hidden="true"></div>
+  <!-- ══════════ Motas de Luz ══════════ -->
+  <div class="motes-container" id="motesContainer" aria-hidden="true"></div>
 
   <!-- ══════════════════════════════════════════
        INTRO SCREEN
@@ -38,320 +38,127 @@
        THE BOOK
        ══════════════════════════════════════════ -->
   <div class="book-wrapper" id="bookWrapper">
-    <div id="magic-flowers" class="flowers-layer">
-<div class="flowers">
-          <div class="flower flower--1">
-            <div class="flower__leafs flower__leafs--1">
-              <div class="flower__leaf flower__leaf--1"></div>
-              <div class="flower__leaf flower__leaf--2"></div>
-              <div class="flower__leaf flower__leaf--3"></div>
-              <div class="flower__leaf flower__leaf--4"></div>
-              <div class="flower__white-circle"></div>
 
-              <div class="flower__light flower__light--1"></div>
-              <div class="flower__light flower__light--2"></div>
-              <div class="flower__light flower__light--3"></div>
-              <div class="flower__light flower__light--4"></div>
-              <div class="flower__light flower__light--5"></div>
-              <div class="flower__light flower__light--6"></div>
-              <div class="flower__light flower__light--7"></div>
-              <div class="flower__light flower__light--8"></div>
-            </div>
-            <div class="flower__line">
-              <div class="flower__line__leaf flower__line__leaf--1"></div>
-              <div class="flower__line__leaf flower__line__leaf--2"></div>
-              <div class="flower__line__leaf flower__line__leaf--3"></div>
-              <div class="flower__line__leaf flower__line__leaf--4"></div>
-              <div class="flower__line__leaf flower__line__leaf--5"></div>
-              <div class="flower__line__leaf flower__line__leaf--6"></div>
-            </div>
-          </div>
+    <!-- ══════════ SVG BOUQUET (hidden, grows with the story) ══════════ -->
+    <div class="bouquet-layer" id="bouquetLayer">
+      <div class="bouquet-wrap" id="bouquetWrap">
+        <svg id="bouquetSvg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="petalGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#ffe9a8"/>
+              <stop offset="55%" stop-color="#ffc94a"/>
+              <stop offset="100%" stop-color="#f5a623"/>
+            </radialGradient>
+            <radialGradient id="centerGrad" cx="40%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#8a5a22"/>
+              <stop offset="55%" stop-color="#6b4419"/>
+              <stop offset="100%" stop-color="#4a2e10"/>
+            </radialGradient>
+            <linearGradient id="stemGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#35592f"/>
+              <stop offset="100%" stop-color="#4d7c4a"/>
+            </linearGradient>
+            <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#4d7c4a"/>
+              <stop offset="100%" stop-color="#35592f"/>
+            </linearGradient>
+            <linearGradient id="ribbonGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f6d3c0"/>
+              <stop offset="100%" stop-color="#f3c9b0"/>
+            </linearGradient>
+          </defs>
 
-          <div class="flower flower--2">
-            <div class="flower__leafs flower__leafs--2">
-              <div class="flower__leaf flower__leaf--1"></div>
-              <div class="flower__leaf flower__leaf--2"></div>
-              <div class="flower__leaf flower__leaf--3"></div>
-              <div class="flower__leaf flower__leaf--4"></div>
-              <div class="flower__white-circle"></div>
+          <g class="sway">
+            <!-- STEMS -->
+            <g class="svg-stems">
+              <path d="M300,645 C240,560 195,440 195,300" stroke="url(#stemGrad)" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <path d="M300,645 C355,560 400,440 405,290" stroke="url(#stemGrad)" stroke-width="8" fill="none" stroke-linecap="round"/>
+              <path d="M300,645 C298,500 300,360 300,240" stroke="url(#stemGrad)" stroke-width="10" fill="none" stroke-linecap="round"/>
+            </g>
 
-              <div class="flower__light flower__light--1"></div>
-              <div class="flower__light flower__light--2"></div>
-              <div class="flower__light flower__light--3"></div>
-              <div class="flower__light flower__light--4"></div>
-              <div class="flower__light flower__light--5"></div>
-              <div class="flower__light flower__light--6"></div>
-              <div class="flower__light flower__light--7"></div>
-              <div class="flower__light flower__light--8"></div>
-            </div>
-            <div class="flower__line">
-              <div class="flower__line__leaf flower__line__leaf--1"></div>
-              <div class="flower__line__leaf flower__line__leaf--2"></div>
-              <div class="flower__line__leaf flower__line__leaf--3"></div>
-              <div class="flower__line__leaf flower__line__leaf--4"></div>
-            </div>
-          </div>
+            <!-- LEAVES -->
+            <g class="svg-leaves">
+              <path d="M255,470 C195,460 140,485 108,530 C170,538 228,515 253,478 Z" fill="url(#leafGrad)"/>
+              <path d="M345,430 C405,415 460,435 492,478 C432,492 375,472 348,438 Z" fill="url(#leafGrad)"/>
+              <path d="M296,400 C270,350 275,300 305,260 C325,310 320,362 300,402 Z" fill="url(#leafGrad)"/>
+              <path d="M198,360 C165,340 145,305 148,265 C188,280 210,315 202,358 Z" fill="url(#leafGrad)"/>
+              <path d="M402,350 C438,332 458,298 452,258 C412,272 390,308 398,348 Z" fill="url(#leafGrad)"/>
+            </g>
 
-          <div class="flower flower--3">
-            <div class="flower__leafs flower__leafs--3">
-              <div class="flower__leaf flower__leaf--1"></div>
-              <div class="flower__leaf flower__leaf--2"></div>
-              <div class="flower__leaf flower__leaf--3"></div>
-              <div class="flower__leaf flower__leaf--4"></div>
-              <div class="flower__white-circle"></div>
+            <!-- RIBBON -->
+            <g class="svg-ribbon">
+              <path d="M300,645 C270,632 250,612 258,592 C266,610 284,622 300,626 Z" fill="url(#ribbonGrad)"/>
+              <path d="M300,645 C330,632 350,612 342,592 C334,610 316,622 300,626 Z" fill="url(#ribbonGrad)"/>
+              <circle cx="300" cy="632" r="9" fill="#d9a441"/>
+              <path d="M292,650 L280,672 L296,664 Z" fill="url(#ribbonGrad)"/>
+              <path d="M308,650 L320,672 L304,664 Z" fill="url(#ribbonGrad)"/>
+            </g>
 
-              <div class="flower__light flower__light--1"></div>
-              <div class="flower__light flower__light--2"></div>
-              <div class="flower__light flower__light--3"></div>
-              <div class="flower__light flower__light--4"></div>
-              <div class="flower__light flower__light--5"></div>
-              <div class="flower__light flower__light--6"></div>
-              <div class="flower__light flower__light--7"></div>
-              <div class="flower__light flower__light--8"></div>
-            </div>
-            <div class="flower__line">
-              <div class="flower__line__leaf flower__line__leaf--1"></div>
-              <div class="flower__line__leaf flower__line__leaf--2"></div>
-              <div class="flower__line__leaf flower__line__leaf--3"></div>
-              <div class="flower__line__leaf flower__line__leaf--4"></div>
-            </div>
-          </div>
+            <!-- BLOOM B (left, small) -->
+            <g class="svg-bloom-b bloom-sway-b" id="bloomB">
+              <g transform="translate(195,290) scale(0.72)"><g id="petalsBackB"></g></g>
+              <g transform="translate(195,290) scale(0.72)"><g id="petalsFrontB"></g></g>
+              <circle cx="195" cy="290" r="46" fill="url(#centerGrad)"/>
+              <g transform="translate(195,290)">
+                <circle cx="-20" cy="-15" r="3" fill="#3a2409"/><circle cx="-2" cy="-22" r="3" fill="#3a2409"/>
+                <circle cx="18" cy="-14" r="3" fill="#3a2409"/><circle cx="24" cy="4" r="3" fill="#3a2409"/>
+                <circle cx="10" cy="20" r="3" fill="#3a2409"/><circle cx="-12" cy="20" r="3" fill="#3a2409"/>
+                <circle cx="-26" cy="4" r="3" fill="#3a2409"/><circle cx="0" cy="0" r="3.2" fill="#3a2409"/>
+              </g>
+            </g>
 
-          <div class="grow-ans" style="--d: 1.2s">
-            <div class="flower__g-long">
-              <div class="flower__g-long__top"></div>
-              <div class="flower__g-long__bottom"></div>
-            </div>
-          </div>
+            <!-- BLOOM C (right, small) -->
+            <g class="svg-bloom-c bloom-sway-c" id="bloomC">
+              <g transform="translate(405,270) scale(0.76)"><g id="petalsBackC"></g></g>
+              <g transform="translate(405,270) scale(0.76)"><g id="petalsFrontC"></g></g>
+              <circle cx="405" cy="270" r="46" fill="url(#centerGrad)"/>
+              <g transform="translate(405,270)">
+                <circle cx="-20" cy="-15" r="3" fill="#3a2409"/><circle cx="-2" cy="-22" r="3" fill="#3a2409"/>
+                <circle cx="18" cy="-14" r="3" fill="#3a2409"/><circle cx="24" cy="4" r="3" fill="#3a2409"/>
+                <circle cx="10" cy="20" r="3" fill="#3a2409"/><circle cx="-12" cy="20" r="3" fill="#3a2409"/>
+                <circle cx="-26" cy="4" r="3" fill="#3a2409"/><circle cx="0" cy="0" r="3.2" fill="#3a2409"/>
+              </g>
+            </g>
 
-          <div class="growing-grass">
-            <div class="flower__grass flower__grass--1">
-              <div class="flower__grass--top"></div>
-              <div class="flower__grass--bottom"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-              <div class="flower__grass__overlay"></div>
-            </div>
-          </div>
+            <!-- BLOOM A (main, large, center) -->
+            <g class="svg-bloom-a bloom-sway-a" id="bloomA">
+              <g transform="translate(300,220)"><g id="petalsBackA"></g></g>
+              <g transform="translate(300,220)"><g id="petalsFrontA"></g></g>
+              <circle cx="300" cy="220" r="48" fill="url(#centerGrad)"/>
+              <g transform="translate(300,220)">
+                <circle cx="-22" cy="-16" r="3.4" fill="#3a2409"/><circle cx="-2" cy="-24" r="3.4" fill="#3a2409"/>
+                <circle cx="20" cy="-16" r="3.4" fill="#3a2409"/><circle cx="26" cy="6" r="3.4" fill="#3a2409"/>
+                <circle cx="12" cy="22" r="3.4" fill="#3a2409"/><circle cx="-12" cy="22" r="3.4" fill="#3a2409"/>
+                <circle cx="-28" cy="6" r="3.4" fill="#3a2409"/><circle cx="0" cy="0" r="3.6" fill="#3a2409"/>
+              </g>
+            </g>
 
-          <div class="growing-grass">
-            <div class="flower__grass flower__grass--2">
-              <div class="flower__grass--top"></div>
-              <div class="flower__grass--bottom"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--1"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--2"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--3"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--4"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--5"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--6"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--7"></div>
-              <div class="flower__grass__leaf flower__grass__leaf--8"></div>
-              <div class="flower__grass__overlay"></div>
-            </div>
-          </div>
+            <!-- SPARKLES -->
+            <g class="svg-sparkles">
+              <g class="sparkle" style="transform-origin:170px 130px;">
+                <path d="M170,120 L174,130 L184,134 L174,138 L170,148 L166,138 L156,134 L166,130 Z" fill="#ffe9a8"/>
+              </g>
+              <g class="sparkle" style="transform-origin:430px 110px; animation-delay:.6s;">
+                <path d="M430,102 L433,110 L441,113 L433,116 L430,124 L427,116 L419,113 L427,110 Z" fill="#ffe9a8"/>
+              </g>
+              <g class="sparkle" style="transform-origin:120px 240px; animation-delay:1.2s;">
+                <path d="M120,232 L123,240 L131,243 L123,246 L120,254 L117,246 L109,243 L117,240 Z" fill="#ffe9a8"/>
+              </g>
+            </g>
 
-          <div class="grow-ans" style="--d: 2.4s">
-            <div class="flower__g-right flower__g-right--1">
-              <div class="leaf"></div>
-            </div>
-          </div>
-
-          <div class="grow-ans" style="--d: 2.8s">
-            <div class="flower__g-right flower__g-right--2">
-              <div class="leaf"></div>
-            </div>
-          </div>
-
-          <div class="grow-ans" style="--d: 2.8s">
-            <div class="flower__g-front">
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div
-                class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8"
-              >
-                <div class="flower__g-front__leaf"></div>
-              </div>
-              <div class="flower__g-front__line"></div>
-            </div>
-          </div>
-
-          <div class="grow-ans" style="--d: 3.2s">
-            <div class="flower__g-fr">
-              <div class="leaf"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--1"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--2"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--3"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--4"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--5"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--6"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--7"></div>
-              <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--0">
-            <div class="grow-ans" style="--d: 3s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 2.2s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.4s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.6s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--1">
-            <div class="grow-ans" style="--d: 3.6s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.8s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.2s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--2">
-            <div class="grow-ans" style="--d: 4s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.2s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.4s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.6s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--3">
-            <div class="grow-ans" style="--d: 4s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.2s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.6s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--4">
-            <div class="grow-ans" style="--d: 4s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.2s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style--d: 3s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.6s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--5">
-            <div class="grow-ans" style="--d: 4s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.2s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.6s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--6">
-            <div class="grow-ans" style="--d: 4.2s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.4s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.6s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 4.8s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-
-          <div class="long-g long-g--7">
-            <div class="grow-ans" style="--d: 3s">
-              <div class="leaf leaf--0"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.2s">
-              <div class="leaf leaf--1"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.5s">
-              <div class="leaf leaf--2"></div>
-            </div>
-            <div class="grow-ans" style="--d: 3.6s">
-              <div class="leaf leaf--3"></div>
-            </div>
-          </div>
-        </div>
+          </g>
+        </svg>
+      </div>
     </div>
 
     <!-- Page Counter -->
-    <div class="page-counter" id="pageCounter">Página 1 de 12</div>
+    <div class="page-counter" id="pageCounter">Página 1 de 16</div>
+
+    <!-- Final Giant Text Overlay -->
+    <div class="final-reveal-text">
+      <h2>Llegué tarde.</h2>
+      <p>Pero aquí están.</p>
+    </div>
 
     <!-- The Book -->
     <div class="book" id="book">
@@ -364,7 +171,7 @@
             <div class="cover-divider" style="margin-top: 2rem;"></div>
             <h1 class="cover-title" style="font-size: 2rem;">Llegaste.</h1>
             <div class="cover-divider"></div>
-            <p class="cover-subtitle">Un pequeño detalle<br>atrasado</p>
+            <p class="cover-subtitle">Un pequeño detalle<br>(un poco) atrasado</p>
             <span class="cover-ornament-bottom">✦ ✦ ✦</span>
           </div>
           <div class="open-book-btn">
@@ -374,146 +181,138 @@
         </div>
         <div class="page-back cover-back">
           <div class="page-content">
-            <p class="text-small text-italic" style="opacity: 0.4;">Un día tarde, como siempre.</p>
+            <p class="text-small text-italic" style="opacity: 0.4;">La puntualidad nunca ha sido mi fuerte.</p>
           </div>
         </div>
       </div>
 
-      <!-- ═══ PAGE 2: HUMOR Y SUSHI ═══ -->
-      <div class="book-page" data-page="1">
+      <!-- ═══ PAGE 2: SUSHI ═══ -->
+      <div class="book-page" data-page="1" data-narrative="humor">
         <div class="page-front">
           <div class="page-content">
-            <p class="text-body text-muted fade-up-text">Sé que dijiste que las flores amarillas estaban bien...</p>
+            <p class="text-body fade-up-text">Las flores amarillas del 21 de septiembre son un clásico...</p>
             <div class="divider"></div>
-            <p class="text-large text-gold mt-2 fade-up-text" style="animation-delay: 1.5s;">...pero que un ramo de sushi sería mejor.</p>
+            <p class="text-large text-gold mt-2 fade-up-text" style="animation-delay: 1.5s;">...pero recordé que un ramo de sushi se ajusta mejor a tus estándares.</p>
           </div>
           <span class="page-number">1</span>
         </div>
         <div class="page-back">
           <div class="page-content">
             <div class="sushi-bouquet-container fade-up-text">
-               <!-- Se inyectará el SVG de sushi mediante JS para no saturar, o podemos dejar una img si es más limpio. 
-                    El SVG original de la pág 6 lo pasaremos aquí. -->
-               <img src="../Dia del lector/img/seal_peeking.jpg" alt="Foca con sushi" class="page-image tiny" style="margin: 0 auto; display:block;">
-               <div style="font-size: 2rem; text-align: center; margin-top: 10px;">(La foca aprueba)</div>
+               <img src="../Dia del lector/img/seal_peeking.jpg" alt="Foca con sushi" class="page-image large" style="margin: 0 auto; display:block;">
             </div>
-            <div class="divider"></div>
-            <p class="text-medium text-center fade-up-text" style="animation-delay: 1s;">Y considerando tus estándares, tenía sentido.</p>
+            <p class="text-medium text-center fade-up-text mt-2" style="animation-delay: 1s;">Tenía todo el sentido del mundo.</p>
+            <p class="text-small text-center text-italic mt-1 fade-up-text" style="animation-delay: 1.5s; opacity: 0.6;">(Y la foca aprueba la moción).</p>
           </div>
           <span class="page-number">2</span>
         </div>
       </div>
 
-      <!-- ═══ PAGE 3: LA PRIMERA FLOR ═══ -->
-      <div class="book-page" data-page="2">
+      <!-- ═══ PAGE 3: LA PAUSA ═══ -->
+      <div class="book-page" data-page="2" data-narrative="graduacion">
         <div class="page-front">
           <div class="page-content">
-            <p class="text-medium text-italic fade-up-text">Pero hablando en serio...</p>
-            <div class="divider"></div>
-            <p class="text-body fade-up-text" style="animation-delay: 2s;">Hay fechas y cosas que merecen ser celebradas.</p>
-            <p class="text-body text-gold mt-2 fade-up-text" style="animation-delay: 4s;">(Estar muy orgulloso de ti, por ejemplo).</p>
+            <p class="text-large text-gold fade-up-text">A veces la rutina hace que las semanas pasen volando...</p>
           </div>
           <span class="page-number">3</span>
         </div>
         <div class="page-back">
           <div class="page-content">
-            <p class="text-medium text-center fade-up-text" style="animation-delay: 4s;">Sí. Eran estas.</p>
-            <div class="page-image tiny mt-3 fade-up-text" style="animation-delay: 5s;">
-              <img src="../Dia del lector/img/foca_3.jpg" alt="Foca orgullosa" loading="lazy">
-            </div>
-            <p class="text-small text-center mt-2 fade-up-text text-italic" style="animation-delay: 5.5s;">Traducción de la foca: está muy orgulloso.</p>
-            <p class="floating-note-page right fade-up-text" style="animation-delay: 6s; bottom: 30px;">Empezando por una.</p>
+            <p class="text-medium text-center fade-up-text">...y uno olvida detenerse a reconocer las cosas que valen la pena.</p>
+            <div class="divider"></div>
+            <p class="text-body mt-2 fade-up-text" style="animation-delay: 1.5s;">Así que hoy quise hacer una pausa para no dejar pasar un par de detalles importantes.</p>
           </div>
           <span class="page-number">4</span>
         </div>
       </div>
 
-      <!-- ═══ PAGE 4: LA DISTANCIA ═══ -->
-      <div class="book-page" data-page="3">
+      <!-- ═══ PAGE 4: EL LOGRO ═══ -->
+      <div class="book-page" data-page="3" data-narrative="orgullo">
         <div class="page-front">
           <div class="page-content">
-            <p class="text-body text-italic fade-up-text">Supongo que la vida tiene esa costumbre de poner distancia donde antes había conversaciones.</p>
-            <div class="divider"></div>
-            <p class="text-body mt-2 fade-up-text" style="animation-delay: 2s;">Y sí... quizá ya no hablamos tanto.</p>
-            <p class="text-medium mt-1 fade-up-text" style="animation-delay: 3.5s;">No pasa nada.</p>
+            <p class="text-body fade-up-text">Primero, hay fechas que indudablemente merecen ser celebradas.</p>
+            <p class="text-body mt-2 fade-up-text" style="animation-delay: 1s;">Felicidades por ese (casi) cartón. Escuché que el discurso te quedó impecable.</p>
           </div>
           <span class="page-number">5</span>
         </div>
         <div class="page-back">
           <div class="page-content">
-            <p class="text-medium text-gold text-center fade-up-text">Hay personas que uno simplemente no deja de recordar.</p>
-            <div class="page-image tiny mt-4 fade-up-text" style="animation-delay: 2s; opacity: 0.5;">
-              <img src="../Dia del lector/img/foca_2.jpg" alt="Foca" loading="lazy">
+            <div class="page-image large fade-up-text">
+              <img src="../Dia del lector/img/foca.jpeg" alt="Foca leyendo" loading="lazy">
             </div>
-            <p class="floating-note-page right fade-up-text" style="animation-delay: 4s;">Pasa más seguido de lo que parece.</p>
+            <p class="text-medium text-center text-gold fade-up-text mt-2" style="animation-delay: 1s;">Logro académico oficialmente desbloqueado.</p>
           </div>
           <span class="page-number">6</span>
         </div>
       </div>
 
-      <!-- ═══ PAGE 5: LA SONRISA Y AMOR/AMISTAD ═══ -->
-      <div class="book-page" data-page="4">
+      <!-- ═══ PAGE 5: RESILIENCIA Y ORGULLO ═══ -->
+      <div class="book-page" data-page="4" data-narrative="sonrisa">
         <div class="page-front">
           <div class="page-content">
-            <p class="text-body text-muted fade-up-text">Además...</p>
-            <p class="text-medium text-italic mt-2 fade-up-text" style="animation-delay: 1.5s;">Hay sonrisas que tienen la descortesía de no dejarse olvidar.</p>
+            <p class="text-body fade-up-text">Pero más allá del diploma...</p>
             <div class="divider"></div>
-            <p class="text-large text-gold mt-2 fade-up-text" style="animation-delay: 3s;">La tuya lleva bastante tiempo abusando de eso.</p>
+            <p class="text-medium mt-2 fade-up-text" style="animation-delay: 1.5s;">Admiro mucho la forma en la que has llevado las cosas últimamente.</p>
           </div>
           <span class="page-number">7</span>
         </div>
         <div class="page-back">
           <div class="page-content">
-            <p class="text-body text-center mt-4 fade-up-text">Feliz Amor y Amistad.</p>
-            <p class="text-small text-center mt-2 fade-up-text" style="animation-delay: 1.5s; opacity: 0.7;">Que eso pueda significar lo que tú quieras.</p>
+            <p class="text-body text-center fade-up-text">Mantenerte firme después de una pérdida y no dejar que eso apague tu luz es de valientes.</p>
+            <p class="text-medium text-gold text-center mt-3 fade-up-text" style="animation-delay: 2s;">Desde mi rincón, estoy muy orgulloso de ti.</p>
+            <div class="page-image small mt-2 fade-up-text" style="animation-delay: 3.5s; opacity: 0.7;">
+              <img src="../Dia del lector/img/foca_4.jpg" alt="Foca asintiendo" loading="lazy">
+            </div>
           </div>
           <span class="page-number">8</span>
         </div>
       </div>
 
-      <!-- ═══ PAGE 6: REVELACION DEL RAMO ═══ -->
-      <div class="book-page" data-page="5">
-        <div class="page-front" style="background: transparent; box-shadow: none;">
+      <!-- ═══ PAGE 6: LA SONRISA ═══ -->
+      <div class="book-page" data-page="5" data-narrative="recuerdo">
+        <div class="page-front">
           <div class="page-content">
-            <!-- Espacio vacío intencional para ver el ramo completo crecer -->
+            <p class="text-body text-italic fade-up-text">Y bueno, luego hay otras cosas.</p>
+            <p class="text-body text-muted mt-2 fade-up-text" style="animation-delay: 1s;">Sé que la vida nos ha puesto en ritmos distintos y que quizá ya no cruzamos tantas palabras como antes.</p>
           </div>
+          <span class="page-number">9</span>
         </div>
-        <div class="page-back" style="background: transparent; box-shadow: none;">
+        <div class="page-back">
           <div class="page-content">
-            <p class="text-medium text-center text-gold fade-up-text" style="animation-delay: 4s; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Llegué tarde. Pero al menos traje algo.</p>
-            <div class="signature mt-4 fade-up-text" style="animation-delay: 6s; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">— Nicolás</div>
+            <p class="text-medium text-gold text-center fade-up-text">Pero sería injusto no decírtelo: tienes una sonrisa imposible de olvidar.</p>
+            <div class="divider"></div>
+            <p class="text-large text-center mt-2 fade-up-text" style="animation-delay: 1.5s;">Y créeme, yo la recuerdo bastante bien.</p>
           </div>
+          <span class="page-number">10</span>
+        </div>
+      </div>
+
+      <!-- ═══ PAGE 7: EL MOTIVO ═══ -->
+      <div class="book-page" data-page="6" data-narrative="amistad">
+        <div class="page-front">
+          <div class="page-content">
+            <p class="text-body fade-up-text">Así que, en resumen...</p>
+            <p class="text-medium text-gold mt-2 fade-up-text" style="animation-delay: 1.5s;">solo quería dejarte este pequeño recordatorio de que por aquí sigo.</p>
+          </div>
+          <span class="page-number">11</span>
+        </div>
+        <div class="page-back">
+          <div class="page-content">
+            <p class="text-large text-center mt-4 fade-up-text">Feliz día de Amor y Amistad.</p>
+            <p class="text-body text-center mt-2 fade-up-text" style="animation-delay: 1.5s; opacity: 0.7;">Que estas flores (atrasadas) te saquen, al menos, la mitad de una de esas sonrisas.</p>
+            <p class="text-small text-center text-gold text-italic mt-4 fade-up-text" style="animation-delay: 3s;">(Pasa la página una vez más).</p>
+          </div>
+          <span class="page-number">12</span>
         </div>
       </div>
       
-      <!-- ═══ PAGE 8: BACK COVER ═══ -->
-      <div class="book-page" data-page="7">
-        <div class="page-front">
-          <div class="page-content">
-            <p class="floating-note-page right">Ya puedes irte.</p>
-            
-            <div class="page-image small mt-3">
-              <img src="../Dia del lector/img/foca_4.jpg" alt="Foca abrazando el final" loading="lazy">
-            </div>
-            <p class="text-medium text-center text-gold mt-2">Un abrazo enorme.</p>
-            
-            <div class="reactions-container mt-4" id="reactionsContainer">
-              <h3 class="reactions-title text-medium text-center">¿El sushi compensó el retraso?</h3>
-              <div class="reactions-grid mt-2">
-                <button class="reaction-btn" data-reaction="like">Sí, perdonado</button>
-                <button class="reaction-btn" data-reaction="love">Prefería flores, pero OK</button>
-                <button class="reaction-btn" data-reaction="seal">La foca salvó el día</button>
-              </div>
-              <p class="reaction-response text-italic mt-3 text-center" id="reactionResponse"></p>
-            </div>
-          </div>
-          <span class="page-number">13</span>
+      <!-- ═══ PAGE 8: CLIMAX (Desaparece el libro) ═══ -->
+      <div class="book-page" data-page="7" data-narrative="climax">
+        <div class="page-front" style="background: transparent; box-shadow: none;">
+          <div class="page-content"></div>
         </div>
-        <div class="page-back cover-back">
-          <div class="page-content">
-            <span style="font-size: 2rem; opacity: 0.3;">🍣</span>
-            <p class="text-small text-italic mt-2" style="opacity: 0.4;">Fin (con mucha soya).</p>
-          </div>
+        <div class="page-back cover-back" style="background: transparent; box-shadow: none; border: none;">
+          <div class="page-content"></div>
         </div>
       </div>
 
@@ -545,17 +344,26 @@
 
   </div><!-- /book-wrapper -->
 
+  <!-- ══════════ Seal Easter Egg ══════════ -->
+  <div class="seal-easter-egg" id="sealEasterEgg">
+    <div class="seal-bubble" id="sealBubble">Me alegra que hayas llegado hasta aquí.</div>
+    <img src="../Dia del lector/img/seal_peeking.jpg" alt="Foca" class="seal-img">
+  </div>
+
 
   <!-- ══════════════════════════════════════════
        JAVASCRIPT
        ══════════════════════════════════════════ -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
+
       // Marcar como visitado en localStorage
       localStorage.setItem('sof_visited_flores', 'true');
-      
-      // Init Intro
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isMobile = window.innerWidth < 768;
+
+      // ====== INTRO ======
       const text1 = document.getElementById('introText1');
       const text2 = document.getElementById('introText2');
       const btn = document.getElementById('introBtn');
@@ -571,7 +379,7 @@
         setTimeout(() => {
           document.getElementById('pageCounter').classList.add('visible');
           document.getElementById('bookNav').classList.add('visible');
-          
+
           if (window.innerWidth >= 768) {
             const hint = document.getElementById('keyboardHint');
             hint.classList.add('visible');
@@ -580,34 +388,71 @@
         }, 800);
       });
 
-      // Init Particles
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!prefersReducedMotion) {
-        const container = document.getElementById('particles');
-        const isMobile = window.innerWidth < 768;
-        const count = isMobile ? 15 : 30;
-
+      // ====== GENERATE SVG PETALS ======
+      function makePetals(groupId, count, radius, length, width, opacity, extraRotate) {
+        const g = document.getElementById(groupId);
+        if (!g) return;
         for (let i = 0; i < count; i++) {
-          const p = document.createElement('div');
-          p.className = 'particle';
-          const size = Math.random() * 4 + 2;
-          const left = Math.random() * 100;
-          const dur = Math.random() * 15 + 15;
-          const delay = Math.random() * 10;
-          const opacity = Math.random() * 0.4 + 0.1;
-          const drift = (Math.random() - 0.5) * 80;
-          
-          p.style.width = `${size}px`;
-          p.style.height = `${size}px`;
-          p.style.left = `${left}vw`;
-          p.style.setProperty('--o', opacity);
-          p.style.setProperty('--drift', drift);
-          p.style.animation = `floatUp ${dur}s ${delay}s linear infinite`;
-          container.appendChild(p);
+          const angle = (360 / count) * i + extraRotate;
+          const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          const d = `M0,0 C ${width},-${length * 0.35} ${width * 0.6},-${length * 0.85} 0,-${length}
+                     C -${width * 0.6},-${length * 0.85} -${width},-${length * 0.35} 0,0 Z`;
+          p.setAttribute('d', d);
+          p.setAttribute('fill', 'url(#petalGrad)');
+          p.setAttribute('transform', `rotate(${angle}) translate(0,-${radius})`);
+          p.setAttribute('opacity', opacity);
+          g.appendChild(p);
+        }
+      }
+      makePetals('petalsBackA', 8, 20, 150, 46, 0.9, 22.5);
+      makePetals('petalsFrontA', 8, 18, 130, 40, 1, 0);
+      makePetals('petalsBackB', 8, 20, 150, 46, 0.9, 22.5);
+      makePetals('petalsFrontB', 8, 18, 130, 40, 1, 0);
+      makePetals('petalsBackC', 8, 20, 150, 46, 0.9, 22.5);
+      makePetals('petalsFrontC', 8, 18, 130, 40, 1, 0);
+
+      // ====== MOTAS DE LUZ ======
+      const motesContainer = document.getElementById('motesContainer');
+      let currentMoteCount = 0;
+      const maxMotes = isMobile ? 12 : 20;
+
+      function createMotes(count, opacity) {
+        if (prefersReducedMotion) return;
+        while (currentMoteCount < count && currentMoteCount < maxMotes) {
+          const m = document.createElement('div');
+          m.className = 'mote';
+          const size = 2 + Math.random() * 4;
+          m.style.width = size + 'px';
+          m.style.height = size + 'px';
+          m.style.left = Math.random() * 100 + 'vw';
+          m.style.setProperty('--mote-o', opacity);
+          m.style.setProperty('--drift', (Math.random() - 0.5) * 80);
+          m.style.animationDuration = (18 + Math.random() * 12) + 's';
+          m.style.animationDelay = (Math.random() * 10) + 's';
+          motesContainer.appendChild(m);
+          currentMoteCount++;
         }
       }
 
-      // Book Logic
+      // Start with very faint motas
+      createMotes(4, 0.12);
+
+      // ====== FALLING PETALS (sparse, post-climax) ======
+      let petalInterval = null;
+
+      function spawnPetal() {
+        if (prefersReducedMotion) return;
+        const p = document.createElement('div');
+        p.className = 'falling-petal';
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.setProperty('--drift', (Math.random() * 140 - 70) + 'px');
+        p.style.animationDuration = (7 + Math.random() * 5) + 's';
+        p.style.background = Math.random() > 0.5 ? '#ffc94a' : '#ffe08a';
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 13000);
+      }
+
+      // ====== BOOK LOGIC ======
       let currentPage = 0;
       let totalPages = 0;
       let isAnimating = false;
@@ -620,20 +465,25 @@
         if (back) {
           const newPage = document.createElement('div');
           newPage.className = 'book-page';
-          
+
           const newFront = document.createElement('div');
           newFront.className = 'page-front';
-          newFront.innerHTML = back.innerHTML; 
-          
+          newFront.innerHTML = back.innerHTML;
+
           const emptyBack1 = document.createElement('div');
           emptyBack1.className = 'page-back';
-          
+
           newPage.appendChild(newFront);
           newPage.appendChild(emptyBack1);
-          
+
+          // Carry the data-narrative attribute to the split page if it exists
+          if (page.dataset.narrative) {
+            newPage.dataset.narrativeCont = page.dataset.narrative;
+          }
+
           page.parentNode.insertBefore(newPage, page.nextSibling);
           back.remove();
-          
+
           const emptyBack2 = document.createElement('div');
           emptyBack2.className = 'page-back';
           page.appendChild(emptyBack2);
@@ -666,8 +516,10 @@
       }
 
       function updateUI() {
-        const displayPage = Math.min(currentPage + 1, totalPages);
-        document.getElementById('pageCounter').textContent = `Página ${displayPage} de ${totalPages}`;
+        const maxPage = totalPages - 1;
+        const realPageCount = (currentPage * 2) + 1;
+        const totalFaces = (maxPage + 1) * 2;
+        document.getElementById('pageCounter').textContent = `Página ${realPageCount} de ${totalFaces}`;
 
         document.getElementById('prevBtn').disabled = currentPage <= 0;
         document.getElementById('nextBtn').disabled = currentPage >= totalPages;
@@ -684,25 +536,75 @@
         });
       }
 
+      // ====== NARRATIVE PROGRESSION ======
+      // Maps narrative moments to visual states
+      const NARRATIVE_MAP = {
+        'humor': 'narrative-glow',
+        'graduacion': 'narrative-stem',
+        'orgullo': 'narrative-leaf',
+        'sonrisa': 'narrative-bloom-1',
+        'recuerdo': 'narrative-bloom-2',
+        'amistad': 'narrative-bloom-3',
+        'climax': 'narrative-climax'
+      };
+
+      const ALL_STATES = Object.values(NARRATIVE_MAP);
+      let highestNarrative = null;
+
+      // Build a map of which page index triggers which narrative
+      const pageNarrativeMap = {};
+      pages.forEach((p, i) => {
+        if (p.dataset.narrative) pageNarrativeMap[i] = p.dataset.narrative;
+        if (p.dataset.narrativeCont) pageNarrativeMap[i] = p.dataset.narrativeCont;
+      });
+
+      // Ordered narratives for "highest reached" logic
+      const NARRATIVE_ORDER = ['humor', 'graduacion', 'orgullo', 'sonrisa', 'recuerdo', 'amistad', 'climax'];
+
+      function getNarrativeIndex(name) {
+        return NARRATIVE_ORDER.indexOf(name);
+      }
+
       function updateNarrativeSteps() {
+        // Find the highest narrative moment we've passed
+        let highest = null;
+        for (let i = 0; i <= currentPage; i++) {
+          if (pageNarrativeMap[i]) {
+            const n = pageNarrativeMap[i];
+            if (highest === null || getNarrativeIndex(n) > getNarrativeIndex(highest)) {
+              highest = n;
+            }
+          }
+        }
+
+        // Only progress forward, never backward
+        if (highest && (highestNarrative === null || getNarrativeIndex(highest) > getNarrativeIndex(highestNarrative))) {
+          highestNarrative = highest;
+        }
+
+        // Apply the CSS class
         const body = document.body;
-        // La progresión de la historia se basa en la currentPage (0 es cover)
-        // Cada paso es una doble página: 
-        // currentPage 0 = Cover
-        // currentPage 1 = Sushi (Páginas 1-2)
-        // currentPage 2 = Primera Flor (Páginas 3-4)
-        // currentPage 3 = Segunda Flor (Páginas 5-6)
-        // currentPage 4 = Tercera Flor (Páginas 7-8)
-        // currentPage 5 = Cuarta/Quinta Flor (Páginas 9-10)
-        // currentPage 6 = Ramo completo (Páginas 11-12)
-        
-        body.classList.remove('step-1', 'step-2', 'step-3', 'step-4', 'step-final');
-        
-        if (currentPage >= 2) body.classList.add('step-1'); // Crece primera flor
-        if (currentPage >= 3) body.classList.add('step-2'); // Crece segunda flor
-        if (currentPage >= 4) body.classList.add('step-3'); // Crece tercera flor y pasto
-        if (currentPage >= 5) body.classList.add('step-4'); // Más pastos/hojas
-        if (currentPage >= 6) body.classList.add('step-final'); // Halo final
+        ALL_STATES.forEach(s => body.classList.remove(s));
+        // Also apply all previous states for accumulated flower parts
+        if (highestNarrative) {
+          const stateClass = NARRATIVE_MAP[highestNarrative];
+          body.classList.add(stateClass);
+
+          // Update motas based on narrative progress
+          const idx = getNarrativeIndex(highestNarrative);
+          if (idx <= 1) createMotes(6, 0.18);
+          else if (idx <= 3) createMotes(10, 0.25);
+          else if (idx <= 5) createMotes(14, 0.35);
+          else createMotes(18, 0.45);
+
+          // Climax: trigger delayed petal and finalize
+          if (highestNarrative === 'climax' && !petalInterval) {
+            // First single petal after 4 seconds
+            setTimeout(spawnPetal, 4000);
+            // Then sparse petals every ~6 seconds
+            petalInterval = setInterval(spawnPetal, 6000);
+          }
+        }
       }
 
       function nextPage() {
@@ -713,21 +615,21 @@
         updatePageStack();
         updateUI();
         updateNarrativeSteps();
-        
-        // Trigger fade-up animations on the new visible pages
+
+        // Trigger fade-up animations on new visible pages
         const visiblePages = document.querySelectorAll('.book-page:not(.flipped) .page-front, .book-page.flipped:last-of-type .page-back');
         visiblePages.forEach(p => {
-            const texts = p.querySelectorAll('.fade-up-text');
-            texts.forEach(t => {
-                t.style.animation = 'none';
-                t.offsetHeight; /* trigger reflow */
-                t.style.animation = null;
-            });
+          const texts = p.querySelectorAll('.fade-up-text');
+          texts.forEach(t => {
+            t.style.animation = 'none';
+            t.offsetHeight; /* trigger reflow */
+            t.style.animation = null;
+          });
         });
 
         setTimeout(() => isAnimating = false, 600);
       }
-      
+
       function prevPage() {
         if (isAnimating || currentPage <= 0) return;
         isAnimating = true;
@@ -736,16 +638,6 @@
         updatePageStack();
         updateUI();
         updateNarrativeSteps();
-        setTimeout(() => isAnimating = false, 600);
-      }
-
-      function prevPage() {
-        if (isAnimating || currentPage <= 0) return;
-        isAnimating = true;
-        currentPage--;
-        pages[currentPage].classList.remove('flipped');
-        updatePageStack();
-        updateUI();
         setTimeout(() => isAnimating = false, 600);
       }
 
@@ -760,12 +652,11 @@
       });
 
       let touchStartX = 0;
-      let touchEndX = 0;
       const book = document.getElementById('book');
 
       book.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, { passive: true });
       book.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
+        const touchEndX = e.changedTouches[0].screenX;
         const diff = touchStartX - touchEndX;
         if (Math.abs(diff) > 50) {
           if (diff > 0) nextPage();
@@ -775,42 +666,128 @@
 
       pages.forEach(page => {
         page.addEventListener('click', (e) => {
-          if (e.target.closest('.nav-btn, button, [role="button"], .reaction-btn')) return;
+          if (e.target.closest('.nav-btn, button, [role="button"]')) return;
           if (!page.classList.contains('flipped')) nextPage();
         });
       });
 
-      // Reactions logic
-      const reactionBtns = document.querySelectorAll('.reaction-btn');
-      const reactionResponse = document.getElementById('reactionResponse');
+      // ====== BOUQUET INTERACTION (post-climax) ======
+      let touchCount = 0;
+      let sealShown = false;
+      let siEraPareaTiShown = false;
 
-      const responses = {
-        'like': 'Me alegra que te haya gustado. Disfruta tu sushi imaginario.',
-        'love': '¿Verdad que es mejor que un ramo normal? Sabía que lo entenderías.',
-        'seal': 'La foca se siente muy honrada por tu validación.'
-      };
+      const CASUAL_PHRASES = [
+        'Bueno, dijiste amarillo.',
+        'El sushi sigue pendiente.',
+        'Este sí sobrevivió al retraso.',
+        'No preguntes cuánto me demoré.',
+        'Esto era más fácil de entregar.',
+        'Hay cosas que sí vale la pena recordar.',
+        'Esta flor tiene la culpa.',
+        'No te acostumbres.'
+      ];
 
-      reactionBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+      function wiggle(el) {
+        if (!el) return;
+        el.animate([
+          { transform: 'rotate(0deg)' },
+          { transform: 'rotate(-12deg)' },
+          { transform: 'rotate(10deg)' },
+          { transform: 'rotate(-7deg)' },
+          { transform: 'rotate(5deg)' },
+          { transform: 'rotate(-2deg)' },
+          { transform: 'rotate(0deg)' }
+        ], { duration: 900, easing: 'ease-in-out' });
+      }
+
+      function showPhrase(x, y, text) {
+        const el = document.createElement('div');
+        el.className = 'float-phrase';
+        el.textContent = text;
+        el.style.left = x + 'px';
+        el.style.top = (y - 20) + 'px';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 2600);
+      }
+
+      function showSeal() {
+        if (sealShown) return;
+        sealShown = true;
+        const seal = document.getElementById('sealEasterEgg');
+        seal.classList.add('visible');
+        // Hide after 7 seconds
+        setTimeout(() => {
+          seal.classList.remove('visible');
+          seal.classList.add('hiding');
+          setTimeout(() => seal.classList.remove('hiding'), 2000);
+        }, 7000);
+      }
+
+      const bloomA = document.getElementById('bloomA');
+      const bloomB = document.getElementById('bloomB');
+      const bloomC = document.getElementById('bloomC');
+      const swayGroup = document.querySelector('.sway');
+
+      function handleBouquetTouch(e) {
+        if (highestNarrative !== 'climax') return;
+
+        touchCount++;
+        const x = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : window.innerWidth / 2);
+        const y = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : window.innerHeight / 2);
+
+        // Always wiggle
+        wiggle(swayGroup);
+
+        // Phrase logic based on touch count
+        if (touchCount === 1) {
+          // Just wiggle, no phrase
+        } else if (touchCount === 2) {
+          showPhrase(x, y, CASUAL_PHRASES[0]);
+        } else if (touchCount === 3) {
+          // Just wiggle + petals
+          spawnPetal();
+          spawnPetal();
+        } else if (touchCount === 4) {
+          showPhrase(x, y, CASUAL_PHRASES[1]);
+        } else if (touchCount === 5) {
+          showPhrase(x, y, CASUAL_PHRASES[2]);
+        } else if (touchCount === 6) {
+          showPhrase(x, y, CASUAL_PHRASES[3]);
+          spawnPetal();
+        } else if (touchCount >= 7 && touchCount <= 9) {
+          // Random casual phrase
+          if (Math.random() > 0.4) {
+            const idx = 4 + Math.floor(Math.random() * (CASUAL_PHRASES.length - 4));
+            showPhrase(x, y, CASUAL_PHRASES[idx]);
+          }
+        } else if (touchCount >= 10 && !siEraPareaTiShown) {
+          // The big one
+          siEraPareaTiShown = true;
+          showPhrase(x, y, 'Sí. Era para ti.');
+        } else if (touchCount >= 12 && !sealShown) {
+          showSeal();
+        } else if (touchCount > 12) {
+          // Occasional casual phrases
+          if (Math.random() > 0.6) {
+            const idx = Math.floor(Math.random() * CASUAL_PHRASES.length);
+            showPhrase(x, y, CASUAL_PHRASES[idx]);
+          }
+        }
+      }
+
+      // Attach interaction to individual blooms and whole SVG
+      [bloomA, bloomB, bloomC].forEach(el => {
+        el.addEventListener('click', (e) => {
           e.stopPropagation();
-          const reaction = btn.dataset.reaction;
-          
-          reactionBtns.forEach(b => {
-            b.style.opacity = '0.5';
-            b.style.transform = 'scale(0.95)';
-          });
-          
-          btn.style.opacity = '1';
-          btn.style.transform = 'scale(1.05)';
-          btn.style.borderColor = 'var(--text-gold)';
-          btn.style.background = 'rgba(212, 175, 55, 0.1)';
-          
-          reactionResponse.style.opacity = '0';
-          setTimeout(() => {
-            reactionResponse.textContent = responses[reaction];
-            reactionResponse.style.opacity = '1';
-          }, 300);
+          if (highestNarrative !== 'climax') return;
+          wiggle(el);
+          handleBouquetTouch(e);
         });
+      });
+
+      document.getElementById('bouquetSvg').addEventListener('click', (e) => {
+        if (highestNarrative !== 'climax') return;
+        handleBouquetTouch(e);
       });
 
     });
