@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const visitedReader = localStorage.getItem('sof_visited_reader') === 'true';
   const visitedStory = localStorage.getItem('sof_visited_story') === 'true';
   const visitedFlores = localStorage.getItem('sof_visited_flores') === 'true';
+  const visitedBiblioteca = localStorage.getItem('sof_visited_biblioteca') === 'true';
 
   // Elementos principales
   const entryScreen = document.getElementById('entry-screen');
@@ -85,15 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (visitedReader) visitedCount++;
     if (visitedStory) visitedCount++;
     if (visitedFlores) visitedCount++;
+    if (visitedBiblioteca) visitedCount++;
 
     if (visitedCount === 0) {
-      starsDisplay.textContent = '✧   ✧   ✧';
+      starsDisplay.textContent = '✧   ✧   ✧   ✧';
     } else if (visitedCount === 1) {
-      starsDisplay.textContent = '✦   ✧   ✧';
+      starsDisplay.textContent = '✦   ✧   ✧   ✧';
     } else if (visitedCount === 2) {
-      starsDisplay.textContent = '✦   ✦   ✧';
+      starsDisplay.textContent = '✦   ✦   ✧   ✧';
+    } else if (visitedCount === 3) {
+      starsDisplay.textContent = '✦   ✦   ✦   ✧';
     } else {
-      starsDisplay.textContent = '✦   ✦   ✦';
+      starsDisplay.textContent = '✦   ✦   ✦   ✦';
     }
 
     // Secuencia de revelado progresivo de las puertas
@@ -115,8 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4600);
 
     setTimeout(() => {
+      if (indexItems[3]) indexItems[3].classList.remove('hidden');
+    }, 5600);
+
+    setTimeout(() => {
       if (starsDisplay) starsDisplay.classList.remove('hidden');
-    }, 4500);
+    }, 5500);
 
     // Revelar la sección de desbloqueo y misterio
     setTimeout(() => {
@@ -186,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (doorId === 'reader') localStorage.setItem('sof_visited_reader', 'true');
         if (doorId === 'story') localStorage.setItem('sof_visited_story', 'true');
         if (doorId === 'flores') localStorage.setItem('sof_visited_flores', 'true');
+        if (doorId === 'biblioteca') localStorage.setItem('sof_visited_biblioteca', 'true');
 
         // Transición suave de umbral
         item.classList.add('door-opening');

@@ -26,37 +26,37 @@
   // Mascot images and messages for each state
   const MASCOT = Object.freeze({
     IDLE: {
-      img: 'img/totoro-sleeping.png',
+      img: 'assets/img/totoro-sleeping.png',
       alt: 'Totoro esperando',
       msg: '¡Escribe algo y presiona play para que te lo lea! 📖',
     },
     PLAYING: {
-      img: 'img/totoro-speaking.png',
+      img: 'assets/img/totoro-speaking.png',
       alt: 'Totoro leyendo',
       msg: '¡Estoy leyendo para ti! 🎶',
     },
     PAUSED: {
-      img: 'img/totoro-paused.png',
+      img: 'assets/img/totoro-paused.png',
       alt: 'Totoro pausado',
       msg: 'Pausa... ¡Presiona play cuando quieras continuar! ⏸️',
     },
     STOPPED: {
-      img: 'img/totoro-sleeping.png',
+      img: 'assets/img/totoro-sleeping.png',
       alt: 'Totoro descansando',
       msg: '¡Listo para leer de nuevo! 🍃',
     },
     COMPLETED: {
-      img: 'img/totoro-celebrate.png',
+      img: 'assets/img/totoro-celebrate.png',
       alt: 'Totoro celebrando',
       msg: '¡Terminé de leer! 🎉 ¿Quieres escucharlo otra vez?',
     },
     ERROR: {
-      img: 'img/totoro-confused.png',
+      img: 'assets/img/totoro-confused.png',
       alt: 'Totoro confundido',
       msg: 'Algo salió mal... ¡Intenta con otra voz o texto! 😅',
     },
     EMPTY: {
-      img: 'img/totoro-confused.png',
+      img: 'assets/img/totoro-confused.png',
       alt: 'Totoro esperando texto',
       msg: 'Escribe o pega un texto para que pueda leértelo 📝',
     },

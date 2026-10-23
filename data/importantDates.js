@@ -6,6 +6,11 @@
 
 const importantDates = [
   {
+    date: "23 · 10 · 2026",
+    title: "Feria Rellenos de Amor & Una Promesa",
+    description: "Tus alfajores artesanales en Chía, el orgullo por tu grado y una disculpa escrita desde el corazón."
+  },
+  {
     date: "20 · 09 · 2026",
     title: "Un ramo atrasado",
     description: "Un día tarde para Amor y Amistad, pero con flores."

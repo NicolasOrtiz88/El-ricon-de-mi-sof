@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Biblioteca de Sof · Entre Libros, Cartas y Recuerdos</title>
+  <meta name="description" content="Un rincón especial entre libros encuadernados en vinotinto, cartas con el corazón en la mano, orgullo por tu graduación y el dulce sabor de tus alfajores.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍷</text></svg>">
+</head>
+<body class="vinotinto-theme">
+
+  <!-- ════════════ BACKGROUND ATMOSPHERE ════════════ -->
+  <div class="sky-canvas" id="skyCanvas">
+    <div class="stars-layer" id="starsLayer"></div>
+    <div class="constellation-layer hidden" id="constellationLayer">
+      <svg class="constellation-svg" id="constellationSvg" viewBox="0 0 1000 600"></svg>
+      <div class="constellation-title">Constelación SOFIM ♡</div>
+    </div>
+    <div class="clouds-layer" id="cloudsLayer"></div>
+    <div class="sunset-glow"></div>
+  </div>
+
+  <!-- Interactive Luminous Moon -->
+  <button class="moon-button" id="moonBtn" title="Toca la luna para ver su mayor poder y las estrellas" aria-label="Tocar la luna">
+    <div class="moon-sphere">
+      <div class="moon-crater c1"></div>
+      <div class="moon-crater c2"></div>
+      <div class="moon-crater c3"></div>
+      <div class="moon-glow"></div>
+    </div>
+    <span class="moon-tooltip">¡Tócame para brillar! 🌙✨</span>
+  </button>
+
+  <!-- Floating Ambient Music Player -->
+  <div class="music-player-pill" id="musicPlayer" role="region" aria-label="Reproductor de música">
+    <audio id="audioElement" preload="auto"></audio>
+    
+    <div class="music-disc-wrap" id="musicDiscWrap" title="Toca para reproducir o pausar">
+      <img src="../assets/img/sof/cover_risk_it_all.png" alt="Carátula" class="music-cover-img" id="musicCoverImg">
+      <div class="disc-center-dot"></div>
+      <div class="music-sound-wave" id="musicSoundWave">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <div class="music-meta-col">
+      <div class="music-track-line">
+        <span class="music-song-name" id="musicSongName">Risk It All</span>
+        <span class="music-fav-tag" id="musicFavTag">★ Tu favorita</span>
+      </div>
+      <div class="music-artist-line" id="musicArtistLine">Bruno Mars · Suave de fondo</div>
+    </div>
+
+    <div class="music-actions-col">
+      <button class="music-icon-btn" id="musicPlayToggleBtn" title="Reproducir / Pausar" aria-label="Reproducir o pausar">
+        <span id="musicPlayIcon">▶</span>
+      </button>
+      <button class="music-icon-btn skip-btn" id="musicSkipBtn" title="Cambiar canción" aria-label="Cambiar canción">
+        <span>⏭</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Back to Hub Navigation -->
+  <nav class="top-nav">
+    <a href="../index.html" class="back-link" title="Volver al rincón principal">
+      <span class="arrow">←</span>
+      <span class="text">El rincón de Sof</span>
+    </a>
+    <div class="date-badge">
+      <span class="dot"></span>
+      23 de Octubre · Una fecha inolvidable
+    </div>
+  </nav>
+
+  <!-- ════════════ MAIN CONTAINER ════════════ -->
+  <div class="container">
+
+    <!-- Header Section -->
+    <header class="library-header">
+      <div class="header-pretitle">EDICIÓN ESPECIAL · DESDE LO MÁS PROFUNDO DEL CORAZÓN</div>
+      <h1 class="library-title">La Biblioteca de Sof</h1>
+      <p class="library-quote">
+        «Ese vinotinto que hace recordar el atardecer, la luna lista para brillar con su mayor poder y los libros donde guardé cada latido.»
+      </p>
+
+      <!-- Center Wax-Sealed Letter Teaser -->
+      <div class="special-letter-card" id="openMainLetterBtn" role="button" tabindex="0">
+        <div class="wax-seal">
+          <span class="seal-initials">N&S</span>
+        </div>
+        <div class="letter-card-content">
+          <span class="letter-tag">Carta Principal · Ábrela primero</span>
+          <h2 class="letter-heading">Para ti: El arrepentimiento, el orgullo y todo lo que eres</h2>
+          <p class="letter-snippet">
+            "Sé que metí la pata y sé lo importante que era para ti... No hay excusa cuando fallé en responderte rápido. Pero hoy también veo a la mujer que ya casi se gradúa y que hoy llena Chía de dulzura con sus alfajores..."
+          </p>
+          <span class="read-prompt">Toca para abrir la carta completa &rarr;</span>
+        </div>
+        <div class="envelope-stamp">23 · 10 · 2026</div>
+      </div>
+    </header>
+
+    <!-- Shelf Controls / Filters -->
+    <div class="shelf-controls">
+      <div class="filter-group" role="tablist">
+        <button class="filter-chip active" data-filter="all">Todos los tomos (11)</button>
+        <button class="filter-chip" data-filter="letter">Disculpa & Orgullo</button>
+        <button class="filter-chip" data-filter="whatsapp">Nuestras Memorias</button>
+        <button class="filter-chip" data-filter="alfajores">Rellenos de Amor</button>
+        <button class="filter-chip" data-filter="sof">La esencia de Sof</button>
+      </div>
+      <div class="shelf-hint">
+        <span class="hand-icon">👆</span> Selecciona cualquier libro del estante para abrirlo
+      </div>
+    </div>
+
+    <!-- ════════════ THE 3D BOOKSHELF ════════════ -->
+    <section class="bookshelf-section" aria-label="Estantería interactiva">
+      
+      <!-- Top Shelf Ornament -->
+      <div class="shelf-crest">
+        <span class="crest-line"></span>
+        <span class="crest-icon">✦ ESTANTERÍA DE NUESTRA HISTORIA ✦</span>
+        <span class="crest-line"></span>
+      </div>
+
+      <!-- Wooden Shelf Structure -->
+      <div class="bookshelf-frame">
+        <div class="shelf-backdrop"></div>
+
+        <!-- Books Row -->
+        <div class="books-row" id="booksRow">
+          <!-- Injected via JS with 3D Books -->
+        </div>
+
+        <!-- Heavy Wooden Shelf Base with Plaque -->
+        <div class="wood-shelf-plank">
+          <div class="plank-highlight"></div>
+          <div class="brass-plaque">
+            <span class="screw left"></span>
+            <span class="plaque-text">BIBLIOTECA SOFIM · 2026</span>
+            <span class="screw right"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Swipe Hint -->
+      <div class="mobile-shelf-hint">
+        <span class="swipe-arrow">👈</span> Desliza para explorar todos los tomos <span class="swipe-arrow">👉</span>
+      </div>
+
+      <!-- Quick Shelf Mini-Status -->
+      <div class="shelf-summary">
+        <p>Has explorado <strong id="readCount">0</strong> de <strong>11</strong> tomos guardados en este estante.</p>
+      </div>
+    </section>
+
+    <!-- ════════════ TRIBUTE TO "RELLENOS DE AMOR" (TODAY OCT 23) ════════════ -->
+    <section class="alfajores-tribute-section">
+      <div class="alfajores-badge">HOY EN SU FERIA · 23 DE OCTUBRE</div>
+      <div class="alfajores-card-grid">
+        <div class="alfajores-banner-col">
+          <div class="alfajores-photo-wrapper">
+            <img src="../assets/img/sof/rellenos_de_amor_feria.jpg" alt="Rellenos de Amor - Alfajores artesanales hechos con amor" class="alfajores-main-img" id="alfajorMainImg">
+            <div class="photo-glow-border"></div>
+          </div>
+        </div>
+        <div class="alfajores-info-col">
+          <span class="brand-subtitle">ALFAJORES ARTESANALES</span>
+          <h2 class="brand-title">Rellenos de Amor</h2>
+          <p class="brand-phrase">«Hechos con amor para endulzar tus momentos. Cada bocado, una razón para sonreír.»</p>
+          
+          <div class="chia-tag">
+            <span class="pin">📍</span> Hechos en Chía con ingredientes de primera
+          </div>
+
+          <p class="brand-support-text">
+            Sofi, hoy 23 de octubre es tu gran día en la feria. Sé todo el empeño, las horas, la dedicación y el amor inmenso que le pones a cada alfajor. Eres una mujer talentosa, creativa y perseverante; verte emprender y brillar con este proyecto me llena de una admiración absoluta. ¡Hoy vas a romperla!
+          </p>
+
+          <!-- The 3 Flavors Interactive Showcase -->
+          <div class="flavors-container">
+            <h3 class="flavors-title">Los 3 Sabores Irresistibles:</h3>
+            <div class="flavor-pills">
+              <div class="flavor-pill lulo" data-flavor="lulo">
+                <span class="flavor-dot"></span>
+                <strong>Dulce de Lulo</strong>
+                <span class="flavor-desc">El toque frutal perfecto</span>
+              </div>
+              <div class="flavor-pill nutella" data-flavor="nutella">
+                <span class="flavor-dot"></span>
+                <strong>Nutella</strong>
+                <span class="flavor-desc">Avellanas y cacao supremo</span>
+              </div>
+              <div class="flavor-pill arequipe" data-flavor="arequipe">
+                <span class="flavor-dot"></span>
+                <strong>Arequipe</strong>
+                <span class="flavor-desc">El clásico bañado en coco</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="alfajor-interactive-cheer">
+            <button class="cheer-btn" id="cheerAlfajorBtn">
+              <span class="cheer-heart">🧁</span> Enviar buenas vibras a la feria de Sof
+            </button>
+            <div class="cheer-counter-text" id="cheerCounter">¡Has enviado <span id="cheerNum">1</span> ovación para Sofi! ✨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ "NO, NO ME CONOCES" / THE ESSENCE OF SOF ════════════ -->
+    <section class="sof-essence-section">
+      <div class="essence-header">
+        <span class="essence-pill">Cosas significativas de ella</span>
+        <h2 class="essence-title">La Sofi real que tanto quiero</h2>
+        <p class="essence-intro">
+          De tus propias palabras: cuando creías que nadie te conocía, me diste el mapa de todo lo hermoso que hay en ti.
+        </p>
+      </div>
+
+      <div class="essence-grid">
+        <!-- Nicknames Card -->
+        <div class="essence-card">
+          <div class="card-icon">✨</div>
+          <h3>Sus mil y un nombres</h3>
+          <p class="card-sub">Cada uno con su propia historia y cariño:</p>
+          <div class="nicknames-cloud">
+            <span class="nick-tag" data-desc="El nombre más lindo del mundo">Sofia</span>
+            <span class="nick-tag" data-desc="La dulzura en persona">Sofi</span>
+            <span class="nick-tag" data-desc="Ternura pura">Fofi</span>
+            <span class="nick-tag" data-desc="Complicidad y sonrisas">Shopas</span>
+            <span class="nick-tag" data-desc="Suaves abrazos">Chofi</span>
+            <span class="nick-tag" data-desc="Broma consentida que nos hace reír">Animal</span>
+            <span class="nick-tag" data-desc="La señora de la casa">Misia</span>
+            <span class="nick-tag" data-desc="Traviesa y curiosa">Cucarrón</span>
+            <span class="nick-tag" data-desc="Caprichosita hermosa">Mocosa</span>
+            <span class="nick-tag" data-desc="Blanca y dulce">Lecherita</span>
+            <span class="nick-tag" data-desc="Chiquita de estatura, gigante de corazón">Enana</span>
+          </div>
+          <div class="nick-explanation" id="nickExplanation">Toca cualquier apodo para ver un detalle...</div>
+        </div>
+
+        <!-- The Vinotinto & Sky Card -->
+        <div class="essence-card vinotinto-focus">
+          <div class="card-icon">🍷</div>
+          <h3>El atardecer vinotinto & La luna</h3>
+          <p class="quote-text">
+            «...lo mucho que me gusta el color vinotinto, ese vinotinto que me hace recordar el atardecer y que al anochecer lo que espero con ansias poder ver, es la luna con su mayor poder... ¡¡BRILLAR!!»
+          </p>
+          <div class="quote-commentary">
+            Ese vinotinto no es solo un color; es la calidez con la que miras la vida. Y tu luna siempre tendrá el poder de iluminar hasta el día más difícil.
+          </div>
+        </div>
+
+        <!-- Mi Luna: Ojos, Maquillaje Artístico & Sonrisa -->
+        <div class="essence-card luna-ojos-focus">
+          <div class="card-icon">🌙</div>
+          <h3>Mi Luna, tus ojos & tu sonrisa</h3>
+          <div class="dual-photo-preview">
+            <div class="photo-item">
+              <img src="../assets/img/sof/ojos_de_sof.png" alt="Los ojos de Sofi con sus gafas" class="essence-thumb">
+              <span class="photo-caption">«Pareciera que miraras con amor a todo»</span>
+            </div>
+            <div class="photo-item">
+              <img src="../assets/img/sof/maquillaje_artistico_sonrisa.png" alt="Sofi con su maquillaje artístico y su sonrisa" class="essence-thumb">
+              <span class="photo-caption">Fascinación por maquillarse · Fuera de lo común</span>
+            </div>
+          </div>
+          <p class="quote-text">
+            «Yo le decía que era mi luna y que como ella ninguna...»
+          </p>
+          <div class="quote-commentary">
+            Siempre te recalcaba lo hermosos que son tus ojos, aunque a veces no te gustaran. Tienen esa magia en la que pareciera que miraras con amor a todo. Y tu fascinación por maquillarte siempre, por crear cosas artísticas y fuera de lo común, es algo único que me encanta de ti... ¡y todo combina a la perfección con esa sonrisa tuya que brilla como la luna!
+          </div>
+        </div>
+
+        <!-- Forgiveness & Noble Heart Card -->
+        <div class="essence-card noble-heart">
+          <div class="card-icon">🕊️</div>
+          <h3>Un corazón que sabe perdonar</h3>
+          <p class="quote-text">
+            «...sé que el perdón lo merecen todos sin importar quién son, así soy yo, amable de corazón que sin importar tu error, el dolor suelo dejar pasar con un simple perdón.»
+          </p>
+          <div class="quote-commentary">
+            Esas palabras me conmueven hasta las lágrimas. Sé que te fallé al no responderte a tiempo, pero saber lo noble y grande que es tu corazón me hace querer ser mejor para ti todos los días.
+          </div>
+        </div>
+
+        <!-- High Expectations Card -->
+        <div class="essence-card expectations">
+          <div class="card-icon">🎓</div>
+          <h3>Expectativas que arrasan lo superior</h3>
+          <p class="quote-text">
+            «Alta no soy pero mis expectativas arrasan lo llamado 'superior'... sé de dónde vengo y para dónde voy.»
+          </p>
+          <div class="quote-commentary">
+            ¡Y ya casi te gradúas! No hay nada que te detenga. Tu carácter, tu empuje y tu mente brillante te van a llevar a la cima de todo lo que sueñes.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cloud Shapes Interactive Play -->
+    <section class="clouds-finder-section">
+      <div class="cloud-finder-card">
+        <div class="cloud-icon">☁️</div>
+        <h3>Buscando formas en las nubes</h3>
+        <p>Dijiste que al final del día te gusta buscar formas en las nubes sin parar. ¡Haz que pasen nubes y descubre lo que guardan!</p>
+        <button class="cloud-spawn-btn" id="spawnCloudBtn">
+          <span class="btn-icon">⛅</span> Hacer pasar una nube especial
+        </button>
+        <div class="cloud-status-toast" id="cloudToast"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="library-footer">
+      <div class="footer-seal">
+        <img src="../assets/img/sof/seal_flower.jpg" alt="Foca con flores" class="footer-seal-img">
+      </div>
+      <p class="footer-heart">Hecho con arrepentimiento sincero, mucho cariño y orgullo para Sofi · Por Nico · 2026</p>
+      <div class="footer-quote">«ATT:) NICO♡ — Para siempre en mi corazón»</div>
+      <a href="../index.html" class="footer-back-link">&larr; Volver al Rincón de Sof</a>
+    </footer>
+
+  </div> <!-- End Container -->
+
+
+  <!-- ════════════ MODAL: 3D BOOK READER ════════════ -->
+  <div class="book-modal" id="bookModal" aria-hidden="true" role="dialog" aria-labelledby="modalBookTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    
+    <div class="book-stage">
+      <button class="close-book-btn" id="closeBookBtn" title="Cerrar libro (Esc)" aria-label="Cerrar libro">
+        ✕ Cerrar tomo
+      </button>
+
+      <!-- The Open Book Structure -->
+      <article class="open-book" id="openBookElement">
+        <!-- Bookmark Ribbon -->
+        <div class="bookmark-ribbon"></div>
+
+        <!-- Page Left: Visual / Photo Framing -->
+        <div class="book-page page-left">
+          <div class="page-corner top-left"></div>
+          <div class="page-content-wrapper">
+            <div class="media-frame" id="modalMediaFrame">
+              <!-- Image injected via JS -->
+            </div>
+            <div class="page-caption" id="modalMediaCaption"></div>
+            <div class="page-number-left" id="modalPageNumLeft">Tomo I</div>
+          </div>
+        </div>
+
+        <!-- Center Spine Crease -->
+        <div class="book-spine-crease"></div>
+
+        <!-- Page Right: Nico's Text & Reflection -->
+        <div class="book-page page-right">
+          <div class="page-corner top-right"></div>
+          <div class="page-content-wrapper">
+            <span class="chapter-kicker" id="modalChapterKicker">CAPÍTULO I</span>
+            <h2 class="chapter-title" id="modalBookTitle">Título del Tomo</h2>
+            <div class="chapter-ornament">✦ · · · ✦</div>
+            
+            <div class="chapter-body" id="modalBookBody">
+              <!-- Text injected via JS -->
+            </div>
+
+            <!-- Interactive Footnote / Reactions -->
+            <div class="book-reaction-bar">
+              <span class="reaction-prompt">Deja una huellita:</span>
+              <button class="react-btn" data-reaction="❤️" title="Amor">❤️</button>
+              <button class="react-btn" data-reaction="✨" title="Mágico">✨</button>
+              <button class="react-btn" data-reaction="🍷" title="Vinotinto">🍷</button>
+              <button class="react-btn" data-reaction="🧁" title="Alfajor">🧁</button>
+              <button class="react-btn" data-reaction="🌙" title="Luna">🌙</button>
+            </div>
+
+            <!-- Page Number & Turn buttons -->
+            <div class="page-footer-nav">
+              <button class="nav-book-btn prev" id="prevBookBtn" title="Tomo anterior">&larr; Anterior</button>
+              <span class="page-number-right" id="modalPageNumRight">Pág. 1 de 10</span>
+              <button class="nav-book-btn next" id="nextBookBtn" title="Siguiente tomo">Siguiente &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+
+  <!-- ════════════ MODAL: MAIN LETTER (DISCULPA & ORGULLO) ════════════ -->
+  <div class="letter-modal" id="mainLetterModal" aria-hidden="true" role="dialog">
+    <div class="letter-modal-backdrop" id="letterModalBackdrop"></div>
+    <div class="letter-modal-wrapper">
+      <button class="close-letter-btn" id="closeLetterBtn" aria-label="Cerrar carta">✕</button>
+      
+      <div class="parchment-letter">
+        <div class="parchment-stamp">23 DE OCTUBRE, 2026 · CHÍA</div>
+        <div class="letter-wax-mark">N♡S</div>
+        
+        <h2 class="parchment-title">Mi querida Sofi,</h2>
+        <div class="parchment-sub">Para la mujer más increíble, con todo mi arrepentimiento y mi orgullo</div>
+
+        <div class="parchment-text">
+          <p>
+            Te escribo esto porque no hay pantalla, ni distancia, ni momento en el que no me pese haberme equivocado. <strong>Metí la pata y lo sé.</strong> Sé con total claridad lo importante que era ese momento para ti, lo mucho que significaba, y que mi falta de rapidez para responderte rompió algo que nunca debí descuidar.
+          </p>
+          <p>
+            No busco excusarme con palabras vacías. Cuando una persona te importa con el alma entera, uno tiene que estar presente. Duele saber que te lastimé por una torpeza mía. Leí con el corazón encogido lo que escribiste en tu descripción: <em>«sé que el perdón lo merecen todos sin importar quién son, así soy yo, amable de corazón que sin importar tu error, el dolor suelo dejar pasar con un simple perdón»</em>. Al leer eso se me partió el alma, no porque busque tu perdón fácil, sino porque me demostró, una vez más, la pureza y la nobleza tan inmensa que tienes.
+          </p>
+          <p>
+            No mereces que te fallen. Y por eso mismo, desde el fondo más sincero de mi ser, <strong>te pido perdón</strong>. Te pido perdón por no haber estado a la altura del segundo en que me necesitabas. Estoy aprendiendo, y no pienso darte por sentada jamás.
+          </p>
+          <div class="letter-divider">✦ ✦ ✦</div>
+          <p>
+            Pero hoy no solo quería pedirte perdón. Hoy también quiero que levantes la cara y mires a tu alrededor con la frente bien en alto: <strong>¡MIRA LO LEJOS QUE HAS LLEGADO!</strong>
+          </p>
+          <p>
+            <strong>Ya casi te gradúas.</strong> ¿Tienes idea de lo inmensamente orgulloso que me siento de ti? Sé las horas de esfuerzo, las dudas que a veces te asaltaban, las trasnochadas y la disciplina con la que has sacado adelante tu carrera. Como bien escribiste tú misma: <em>«mis expectativas arrasan lo llamado superior»</em>. ¡Y vaya que sí! Eres una mujer brillante, tenaz, imparable, y verte a punto de recibir ese título me llena el pecho de una emoción que no te alcanzas a imaginar.
+          </p>
+          <p>
+            Y como si fuera poco... <strong>¡HOY 23 DE OCTUBRE ES TU FERIA DE ALFAJORES!</strong><br>
+            Tus alfajores <strong>«Rellenos de Amor»</strong> no son solo un postre delicioso; son el reflejo de tu corazón, de tu creatividad, de tu capacidad para emprender y dar alegría. Sé que Chía hoy se va a enamorar de tu Dulce de Lulo, de tu Nutella y de tu Arequipe. Eres una reina en todo lo que te propones.
+          </p>
+          <p>
+            Aquí en esta biblioteca te dejo guardados nuestros momentos más sagrados: cuando aprendiste a programar por mí, cuando peleamos y me dijiste que al menos me harías postres, nuestras 11 horas al teléfono, tus siestas en videollamada mientras yo trabajaba, nuestras risas con Abelardo... y aquel mensaje donde nos dijimos <em>«Shi shi, la recuperamos»</em>.
+          </p>
+          <p>
+            Y también te guardé un tomo que nunca debes olvidar: tus ojos, que aunque no te gustaran a mí me fascinan porque pareciera que miraras con amor a todo; tu pasión por maquillarte siempre y crear cosas artísticas tan fuera de lo común; y esa sonrisa que ilumina cualquier noche. Te lo decía antes y te lo prometo hoy: <strong>tú eres mi luna, y como tú ninguna</strong>. 🌙
+          </p>
+          <p class="letter-closing">
+            Gracias por existir en mi vida, Sofi. Eres una personita increíble.<br>
+            Con todo mi cariño, mi respeto y mi admiración,<br>
+            <span class="handwritten-signature">Nico</span>
+          </p>
+          <div class="letter-song-ps">
+            <span class="ps-icon">🎵</span>
+            <em>PD: Puse de fondo <strong>«Risk It All»</strong>, tu favorita... Porque contigo me arriesgo a todo sin dudarlo.</em>
+          </div>
+        </div>
+
+        <div class="parchment-footer">
+          <button class="letter-action-btn" id="finishLetterBtn">Guardar esta promesa en el corazón</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ════════════ PEEKING SEAL EASTER EGG ════════════ -->
+  <aside class="peeking-seal-widget" id="peekingSeal">
+    <div class="seal-bubble hidden" id="sealBubble">¡Oye Sofi! Nico te quiere un montón y te desea muchos éxitos hoy en la feria 🧁✨</div>
+    <img src="../assets/img/sof/seal_peeking.jpg" alt="Foca asomándose tierna" class="seal-sprite" id="sealSprite">
+  </aside>
+
+  <!-- JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
